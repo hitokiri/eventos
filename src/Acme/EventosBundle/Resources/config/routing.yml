@@ -1,0 +1,3 @@
+eventos_homepage:
+    pattern:  /
+    defaults: { _controller: EventosBundle:eventos:index }

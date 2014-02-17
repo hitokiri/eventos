@@ -1,0 +1,7 @@
+parameters:
+#    eventos.example.class: Acme\EventosBundle\Example
+
+services:
+#    eventos.example:
+#        class: %eventos.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
