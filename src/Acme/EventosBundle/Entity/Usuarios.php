@@ -21,7 +21,7 @@ class Usuarios{
 /**
 * @ORM\Column(type="string", length=100)
 */
- 	protected $nambre;
+ 	protected $nombre;
 
 /**
 * @ORM\Column(type="string", length=100)
@@ -42,7 +42,7 @@ class Usuarios{
 	 protected $telefono;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="integer")
 */
 
  	protected $dui;
@@ -58,6 +58,9 @@ class Usuarios{
 */
     protected $direccion;
 
+
+
+
     /**
      * Get id
      *
@@ -69,26 +72,26 @@ class Usuarios{
     }
 
     /**
-     * Set nambre
+     * Set nombre
      *
-     * @param string $nambre
+     * @param string $nombre
      * @return Usuarios
      */
-    public function setNambre($nambre)
+    public function setNombre($nombre)
     {
-        $this->nambre = $nambre;
+        $this->nombre = $nombre;
 
         return $this;
     }
 
     /**
-     * Get nambre
+     * Get nombre
      *
      * @return string 
      */
-    public function getNambre()
+    public function getNombre()
     {
-        return $this->nambre;
+        return $this->nombre;
     }
 
     /**
@@ -163,7 +166,7 @@ class Usuarios{
     /**
      * Set dui
      *
-     * @param string $dui
+     * @param integer $dui
      * @return Usuarios
      */
     public function setDui($dui)
@@ -176,7 +179,7 @@ class Usuarios{
     /**
      * Get dui
      *
-     * @return string 
+     * @return integer 
      */
     public function getDui()
     {

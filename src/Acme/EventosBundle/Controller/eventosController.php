@@ -19,6 +19,16 @@ class eventosController extends Controller{
       public function crearAction(Request $request){
       	$usuarios = new Usuarios();
       	$form = $this->createForm(new UsuarioForm(), $usuarios);
+      	$form->handleRequest($request);
+
+	    if ($form->isValid()) {
+
+	        $em = $this->getDoctrine()->getManager();
+		    $em->persist($usuarios);
+		    $em->flush();
+
+	        return $this->redirect($this->generateUrl('usuario_crear'));
+	    }
 	    $params = array('mensaje' => 'Crear Usuario',
 						'fecha' => date('d-m-yy'),
 						'form' => $form->createView(),

@@ -3,7 +3,7 @@
     <h1>{{mensaje}}</h1>
 {{fecha}}
 
-<form action="/" method="post" {{ form_enctype(form) }}>
+<form action="{{ path('usuario_crear') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
 
     <input type="submit" />
