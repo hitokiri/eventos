@@ -36,4 +36,17 @@ class eventosController extends Controller{
 	    return $this->render('EventosBundle:eventos:crear.html.twig',$params);
     }
 
+    public function mostrarTodoAction(){
+      	$repositorio = $this -> getDoctrine()
+      				->getRepository('EventosBundle:Usuarios');
+
+      	$consulta = $repositorio->findAll();
+
+	    $params = array('mensaje' => 'Crear Usuario',
+						'fecha' => date('d-m-yy'),
+						'todos' => $consulta,
+						);
+	    return $this->render('EventosBundle:eventos:mostrarTodo.html.twig',$params);
+    }
+
 }

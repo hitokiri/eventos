@@ -2,5 +2,8 @@ eventos_homepage:
     pattern:  /
     defaults: { _controller: EventosBundle:eventos:index }
 usuario_crear:
-    pattern:  /crear
+    pattern:  /usuario/crear
     defaults: { _controller: EventosBundle:eventos:crear }
+usuario_mostrartodo:
+    pattern:  /usuario/mostrar_todo
+    defaults: { _controller: EventosBundle:eventos:mostrarTodo }

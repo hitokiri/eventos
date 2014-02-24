@@ -1,0 +1,7 @@
+{% extends 'EventosBundle::mibase.html.twig' %}
+{% block contenido %}
+
+{% for item in todos %}
+    {{item.nombre}} {{item.apellidos}}
+{% endfor %}
+{% endblock %}
