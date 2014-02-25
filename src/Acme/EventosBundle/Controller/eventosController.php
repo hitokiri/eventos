@@ -49,4 +49,10 @@ class eventosController extends Controller{
 	    return $this->render('EventosBundle:eventos:mostrarTodo.html.twig',$params);
     }
 
+    public function opcionAction($opcion){
+    	$params = array('opcion' => $opcion,
+    					);
+    	return $this -> render('EventosBundle:eventos:opcion.html.twig',$params);
+    }
+
 }

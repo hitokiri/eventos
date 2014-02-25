@@ -7,3 +7,6 @@ usuario_crear:
 usuario_mostrartodo:
     pattern:  /usuario/mostrar_todo
     defaults: { _controller: EventosBundle:eventos:mostrarTodo }
+usuario_opcion:
+    pattern:  /usuario/opciones/{opcion}
+    defaults: { _controller: EventosBundle:eventos:opcion }
