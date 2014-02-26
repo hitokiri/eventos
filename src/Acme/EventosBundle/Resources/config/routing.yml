@@ -10,3 +10,9 @@ usuario_mostrartodo:
 usuario_opcion:
     pattern:  /usuario/opciones/{opcion}
     defaults: { _controller: EventosBundle:eventos:opcion }
+usuario_opcion_delet:
+    pattern:  /usuario/opciones/eliminar/{id}
+    defaults: { _controller: EventosBundle:eventos:opcion_delet }
+usuario_opcion_update:
+    pattern:  /usuario/opciones/modificar/{id}
+    defaults: { _controller: EventosBundle:eventos:opcion_update }

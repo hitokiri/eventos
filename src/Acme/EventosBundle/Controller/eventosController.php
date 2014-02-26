@@ -55,4 +55,16 @@ class eventosController extends Controller{
     	return $this -> render('EventosBundle:eventos:opcion.html.twig',$params);
     }
 
+    public function opcion_DeletAction($id){
+    	$params = array('opcion' => $id,
+    					);
+    	return $this -> render('EventosBundle:eventos:opcion_delet.html.twig',$params);
+    }
+
+    public function opcion_UpdateAction($id){
+    	$params = array('opcion' => $id,
+    					);
+    	return $this -> render('EventosBundle:eventos:opcion_update.html.twig',$params);
+    }
+
 }
