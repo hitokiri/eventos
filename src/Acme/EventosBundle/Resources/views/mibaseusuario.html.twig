@@ -3,10 +3,25 @@
 
 	<div class="row">
 		<form action="{% block accion_usuario %}{% endblock %} " method="post" {% block form_enctype %}{% endblock %}>
-			<div class="caja_usuarios col-xs-8 col-xs-offset-2">
-			{% block datos %}
+			<div class="caja_usuarios col-xs-8 col-xs-offset-2 navbar-inverse">
+			<div class="row">
+			<div class="col-xs-6 fichausuario">
+				<h4>Datos Asistente</h4>
+				{% block datos_asistente %}
+					<br>nombre:
+					<br>apellidos:
+					<br>comunidad:
+					<br>distros:
+				{% endblock %}
+			</div>
+			<div class="col-xs-5 fichausuario ">
+				{% block foto_asistente %}
+				    foto o algo mas d
+				{% endblock %}
+			</div>
 
-			{% endblock %}
+			</div>
+
 			</div>
 		</form>
 	</div>
