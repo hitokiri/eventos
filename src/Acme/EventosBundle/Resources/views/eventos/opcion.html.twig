@@ -1,4 +1,15 @@
 {% extends 'EventosBundle::mibasetabla.html.twig' %}
 {% block tabla_usuarios %}
-	{{opcion}}
+	{% if opcion == 'modificar' %}
+		{% for item in usuarios %}
+		    {{item.nombre}} {{item.apellidos}} <a href="{{path('usuario_opcion_update', {'id': item.id})}} ">modificar</a> <br>
+		{% endfor %}
+	{% elseif opcion == 'eliminar' %}
+		{% for item in usuarios %}
+		    {{item.nombre}} {{item.apellidos}} <a href="{{path('usuario_opcion_delet', {'id': item.id})}} ">modificar</a> <br>
+		{% endfor %}
+	{% else %}
+		    <h4>opcion no valida</h4>
+	{% endif %}
+
 {% endblock %}

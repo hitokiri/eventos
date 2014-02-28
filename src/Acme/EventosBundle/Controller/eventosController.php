@@ -50,7 +50,12 @@ class eventosController extends Controller{
     }
 
     public function opcionAction($opcion){
+    	$repositorio = $this -> getDoctrine()
+      				->getRepository('EventosBundle:Usuarios');
+
+      	$consulta = $repositorio->findAll();
     	$params = array('opcion' => $opcion,
+    					'usuarios' => $consulta,
     					);
     	return $this -> render('EventosBundle:eventos:opcion.html.twig',$params);
     }
