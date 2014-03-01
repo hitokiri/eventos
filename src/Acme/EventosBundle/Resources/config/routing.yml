@@ -16,3 +16,6 @@ usuario_opcion_delet:
 usuario_opcion_update:
     pattern:  /usuario/opciones/modificar/{id}
     defaults: { _controller: EventosBundle:eventos:opcion_update }
+distros_crear:
+    pattern:  /distros/crear
+    defaults: { _controller: EventosBundle:eventos:distros_crear }

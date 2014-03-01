@@ -19,24 +19,30 @@ class Usuarios{
  	protected $id;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=40)
 */
  	protected $nombre;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=40)
 */
 
  	protected $apellidos;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=3)
+*/
+
+    protected $sexo;
+
+/**
+* @ORM\Column(type="string", length=60)
 */
 
  	protected $mail;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=15)
 */
 
 	 protected $telefono;
@@ -48,7 +54,7 @@ class Usuarios{
  	protected $dui;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=50)
 */
 
  	protected $comunidad;
@@ -58,6 +64,22 @@ class Usuarios{
 */
     protected $direccion;
 
+/**
+* @ORM\Column(type="string", length=100)
+*/
+    protected $imagen;
+
+/**
+ * @ORM\ManyToOne(targetEntity="Distros", inversedBy="usuarios")
+ * @ORM\JoinColumn(name="distro_id", referencedColumnName="id")
+ */
+    protected $distros;
+
+/**
+* @ORM\Column(type="integer")
+*/
+
+    protected $distro_cantidad;
 
 
 
@@ -115,6 +137,29 @@ class Usuarios{
     public function getApellidos()
     {
         return $this->apellidos;
+    }
+
+    /**
+     * Set sexo
+     *
+     * @param string $sexo
+     * @return Usuarios
+     */
+    public function setSexo($sexo)
+    {
+        $this->sexo = $sexo;
+
+        return $this;
+    }
+
+    /**
+     * Get sexo
+     *
+     * @return string 
+     */
+    public function getSexo()
+    {
+        return $this->sexo;
     }
 
     /**
@@ -230,5 +275,74 @@ class Usuarios{
     public function getDireccion()
     {
         return $this->direccion;
+    }
+
+    /**
+     * Set imagen
+     *
+     * @param string $imagen
+     * @return Usuarios
+     */
+    public function setImagen($imagen)
+    {
+        $this->imagen = $imagen;
+
+        return $this;
+    }
+
+    /**
+     * Get imagen
+     *
+     * @return string 
+     */
+    public function getImagen()
+    {
+        return $this->imagen;
+    }
+
+    /**
+     * Set distro_cantidad
+     *
+     * @param integer $distroCantidad
+     * @return Usuarios
+     */
+    public function setDistroCantidad($distroCantidad)
+    {
+        $this->distro_cantidad = $distroCantidad;
+
+        return $this;
+    }
+
+    /**
+     * Get distro_cantidad
+     *
+     * @return integer 
+     */
+    public function getDistroCantidad()
+    {
+        return $this->distro_cantidad;
+    }
+
+    /**
+     * Set distros
+     *
+     * @param \Acme\EventosBundle\Entity\Distros $distros
+     * @return Usuarios
+     */
+    public function setDistros(\Acme\EventosBundle\Entity\Distros $distros = null)
+    {
+        $this->distros = $distros;
+
+        return $this;
+    }
+
+    /**
+     * Get distros
+     *
+     * @return \Acme\EventosBundle\Entity\Distros 
+     */
+    public function getDistros()
+    {
+        return $this->distros;
     }
 }

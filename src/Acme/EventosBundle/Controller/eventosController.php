@@ -4,8 +4,10 @@ namespace Acme\EventosBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Acme\EventosBundle\Entity\Usuarios;
+use Acme\EventosBundle\Entity\Distros;
 use Symfony\Component\HttpFoundation\Request;
 use Acme\EventosBundle\Forms\UsuarioForm;
+use Acme\EventosBundle\Forms\DistrosForm;
 
 class eventosController extends Controller{
 
@@ -72,4 +74,21 @@ class eventosController extends Controller{
     	return $this -> render('EventosBundle:eventos:opcion_update.html.twig',$params);
     }
 
+     public function distros_crearAction(Request $request){
+    	$usuarios = new Distros();
+      	$form = $this->createForm(new DistrosForm(), $usuarios);
+      	$form->handleRequest($request);
+
+	    if ($form->isValid()) {
+
+	        $em = $this->getDoctrine()->getManager();
+		    $em->persist($usuarios);
+		    $em->flush();
+
+	    return $this->redirect($this->generateUrl('distros_crear'));
+   		}
+	    $params = array('form' => $form->createView(),
+						);
+	return $this->render('EventosBundle:eventos:Distros.html.twig',$params);
+	}
 }

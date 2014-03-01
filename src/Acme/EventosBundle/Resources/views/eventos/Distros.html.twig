@@ -1,0 +1,8 @@
+{% extends 'EventosBundle::mibase.html.twig' %}
+{% block contenido %}
+	 <form action="{{ path('distros_crear') }}" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+
+	    <input type="submit" />
+	</form>
+{% endblock %}
