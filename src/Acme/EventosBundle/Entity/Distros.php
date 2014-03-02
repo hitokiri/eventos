@@ -30,7 +30,7 @@ class Distros{
     protected $distro_cantidad;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=100, nullable=true)
 */
  	protected $logo;
 

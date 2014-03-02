@@ -1,0 +1,43 @@
+{% extends 'EventosBundle::mibasetabla.html.twig' %}
+{% block tabla_usuarios %}
+<div class="tablita_usuarios">
+	<div class="row">
+		<div class="col-xs-1 col-xs-offset-1">
+			N°
+		</div>
+
+		<div class="col-xs-2">
+			Logo
+		</div>
+		<div class="col-xs-2">
+			Nombre
+		</div>
+		<div class="col-xs-2">
+			cantidad
+		</div>		<div class="col-xs-2">
+			Opciones
+		</div>
+	</div>
+	{% for item in todos %}
+
+	    	<div class="row">
+	    		<div class="col-xs-1 col-xs-offset-1">
+	    			{{loop.index}}
+	    		</div>
+	    		<div class="col-xs-2 ">
+	    			<img src="{{ asset('bundles/eventos/images/')}}p{{item.logo|trim('/tmp/')}} " alt="" class="img-responsive img-circle logo_distros">
+	    		</div>
+	    		<div class="col-xs-2">
+	    			{{item.nombre|title}}
+	    		</div>
+	    		<div class="col-xs-2">
+					{{item.distroCantidad}}
+	    		</div>
+	    		<div class="col-xs-2">
+					accion
+	    		</div>
+	    	</div>
+
+		{% endfor %}
+</div>
+{% endblock %}

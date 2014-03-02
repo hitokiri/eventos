@@ -23,7 +23,7 @@ class UsuarioForm extends AbstractType{
 		$builder -> add('dui');
 		$builder -> add('comunidad');
 		$builder -> add('direccion');
-		$builder -> add('imagen');
+		$builder -> add('imagen', 'file');
 		$builder -> add('distros');
 		$builder -> add('distro_cantidad');
 	}

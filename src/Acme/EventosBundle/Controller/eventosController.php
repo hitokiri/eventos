@@ -8,6 +8,7 @@ use Acme\EventosBundle\Entity\Distros;
 use Symfony\Component\HttpFoundation\Request;
 use Acme\EventosBundle\Forms\UsuarioForm;
 use Acme\EventosBundle\Forms\DistrosForm;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class eventosController extends Controller{
 
@@ -24,7 +25,8 @@ class eventosController extends Controller{
       	$form->handleRequest($request);
 
 	    if ($form->isValid()) {
-
+	    	$dir = '/var/www/eventos/web/bundles/eventos/images';
+	    	$form['imagen']->getData()->move($dir);
 	        $em = $this->getDoctrine()->getManager();
 		    $em->persist($usuarios);
 		    $em->flush();
@@ -80,7 +82,8 @@ class eventosController extends Controller{
       	$form->handleRequest($request);
 
 	    if ($form->isValid()) {
-
+	    	$dir = '/var/www/eventos/web/bundles/eventos/images';
+	    	$form['logo']->getData()->move($dir);
 	        $em = $this->getDoctrine()->getManager();
 		    $em->persist($usuarios);
 		    $em->flush();
@@ -91,4 +94,15 @@ class eventosController extends Controller{
 						);
 	return $this->render('EventosBundle:eventos:Distros.html.twig',$params);
 	}
+
+	public function distros_mostrarAction(){
+      	$repositorio = $this -> getDoctrine()
+      				->getRepository('EventosBundle:Distros');
+
+      	$consulta = $repositorio->findAll();
+
+	    $params = array('todos' => $consulta,
+						);
+	    return $this->render('EventosBundle:eventos:DistrosmostrarTodo.html.twig',$params);
+    }
 }

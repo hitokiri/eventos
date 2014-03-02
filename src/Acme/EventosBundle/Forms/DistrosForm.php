@@ -14,7 +14,7 @@ class DistrosForm extends AbstractType{
 
 		$builder -> add('nombre');
 		$builder -> add('distro_cantidad');
-		$builder -> add('logo');
+		$builder -> add('logo', 'file');
 
 	}
 
