@@ -15,8 +15,8 @@ class UsuarioForm extends AbstractType{
 		$builder -> add('nombre');
 		$builder -> add('apellidos');
 		$builder -> add('sexo', 'choice', array(
-			'choices' => array('' => 'seleccione una opcion', 'm'=>'Masculino', 'f' => 'Femenino'),
-			'preferred_choices' => array('a'),
+			'choices' => array('' => 'Seleccione una Opcion', 'm'=>'Masculino', 'f' => 'Femenino'),
+			'preferred_choices' => array(''),
 			));
 		$builder -> add('mail');
 		$builder -> add('telefono');
@@ -24,7 +24,11 @@ class UsuarioForm extends AbstractType{
 		$builder -> add('comunidad');
 		$builder -> add('direccion');
 		$builder -> add('imagen', 'file');
-		$builder -> add('distros');
+		$builder -> add('distros', 'entity', array(
+			'class' => 'EventosBundle:Distros',
+    		'property' => 'nombre',
+    		'empty_value' => 'Seleccione una Distro',
+			));
 		$builder -> add('distro_cantidad');
 	}
 

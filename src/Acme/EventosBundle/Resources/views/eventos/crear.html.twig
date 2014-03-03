@@ -17,7 +17,7 @@
   			<div class="col-xs-9">{{ form_errors(form.apellidos) }}{{ form_widget(form.apellidos, { 'attr': {'class': 'form-control'}}) }}</div>
   		</div>
   		<div class="form-group">
-  			{{ form_label(form.sexo, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			{{ form_label(form.sexo, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label', 'separator': '=====' }}) }}
   			<div class="col-xs-9">{{ form_errors(form.sexo) }}{{ form_widget(form.sexo, { 'attr': {'class': 'form-control'}}) }}</div>
   		</div>
 		<div class="form-group">
@@ -46,7 +46,7 @@
   		</div>
   		<div class="form-group">
   			{{ form_label(form.distros, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
-  			<div class="col-xs-9">{{ form_errors(form.distros) }}{{ form_widget(form.distros, { 'attr': {'class': 'form-control'}}) }}</div>
+  			<div class="col-xs-9">{{ form_errors(form.distros) }}{{ form_widget(form.distros, { 'attr': {'class': 'form-control', 'placeholder': 'lol'}}) }}</div>
   		</div>
   		<div class="form-group">
   			{{ form_label(form.distro_cantidad, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
