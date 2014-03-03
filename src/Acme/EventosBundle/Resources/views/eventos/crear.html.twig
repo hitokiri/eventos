@@ -1,11 +1,61 @@
-{% extends 'EventosBundle::mibase.html.twig' %}
-{% block contenido %}
-    <h1>{{mensaje}}</h1>
-{{fecha}}
+{% extends 'EventosBundle::mibaseusuario.html.twig' %}
+{% block title %}
+	Crear Usuario
+{% endblock %}
+{% block datos_asistente %}
+
 
 <form action="{{ path('usuario_crear') }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(form) }}
 
-    <input type="submit" />
+  <div class="form-horizontal">
+  		<div class="form-group">
+  			{{ form_label(form.nombre, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.nombre) }}{{ form_widget(form.nombre, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+  		<div class="form-group">
+  			{{ form_label(form.apellidos, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.apellidos) }}{{ form_widget(form.apellidos, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+  		<div class="form-group">
+  			{{ form_label(form.sexo, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.sexo) }}{{ form_widget(form.sexo, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+		<div class="form-group">
+  			{{ form_label(form.mail, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.mail) }}{{ form_widget(form.mail, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+  		<div class="form-group">
+  			{{ form_label(form.telefono, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.telefono) }}{{ form_widget(form.telefono, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+		<div class="form-group">
+  			{{ form_label(form.dui, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.dui) }}{{ form_widget(form.dui, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+		<div class="form-group">
+  			{{ form_label(form.comunidad, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.comunidad) }}{{ form_widget(form.comunidad, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+  		<div class="form-group">
+  			{{ form_label(form.direccion, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.direccion) }}{{ form_widget(form.direccion, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+		<div class="form-group">
+  			{{ form_label(form.imagen, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.imagen) }}{{ form_widget(form.imagen) }}</div>
+  		</div>
+  		<div class="form-group">
+  			{{ form_label(form.distros, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.distros) }}{{ form_widget(form.distros, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+  		<div class="form-group">
+  			{{ form_label(form.distro_cantidad, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
+  			<div class="col-xs-9">{{ form_errors(form.distro_cantidad) }}{{ form_widget(form.distro_cantidad, { 'attr': {'class': 'form-control'}}) }}</div>
+  		</div>
+  	</div>
+
+		<input type="submit" value="Enviar Consulta" class="btn btn-defaul">
+	<br>
+	<br>
 </form>
 {% endblock %}

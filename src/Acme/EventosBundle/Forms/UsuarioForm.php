@@ -15,7 +15,7 @@ class UsuarioForm extends AbstractType{
 		$builder -> add('nombre');
 		$builder -> add('apellidos');
 		$builder -> add('sexo', 'choice', array(
-			'choices' => array('a' => 'seleccione una opcion', 'm'=>'Masculino', 'f' => 'Femenino'),
+			'choices' => array('' => 'seleccione una opcion', 'm'=>'Masculino', 'f' => 'Femenino'),
 			'preferred_choices' => array('a'),
 			));
 		$builder -> add('mail');
@@ -29,7 +29,7 @@ class UsuarioForm extends AbstractType{
 	}
 
 	public function getName(){
-		return 'nombre';
+		return 'usuarios';
 	}
 }
 
