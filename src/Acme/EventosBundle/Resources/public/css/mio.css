@@ -20,4 +20,107 @@
 
 }
 
+/*barra progreso*/
+.principal-barra{
+	padding-left: 10%;
+}
+
+.caja_barra1{
+    height: 40px;
+	max-width: 32%;
+    width: 25%;
+	background-color:green;
+    display: inline-block;
+    margin-left:-4px;
+    padding: 0;
+    text-align: center;
+    padding-top: 1%;
+
+}
+
+
+.flecha_barra1 {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left:  20px solid green;
+    display: inline-block;
+    position: absolute;
+    margin-left:-4px;
+    padding: 0;
+}
+.caja_barra2{
+    height: 40px;
+	max-width: 32%;
+    width: 25%;
+	background-color: orange;
+    display: inline-block;
+    margin-left:-4px;
+    padding: 0;
+    text-align: center;
+    padding-top: 1%;
+}
+
+
+.flecha_barra2 {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left:  20px solid  orange;
+    display: inline-block;
+    position: absolute;
+    margin-left:-4px;
+    padding: 0;
+}
+
+.caja_barra3{
+    height: 40px;
+	max-width: 32%;
+    width: 25%;
+	background-color: cadetblue;
+    display: inline-block;
+    margin-left:-4px;
+    padding: 0;
+    text-align: center;
+    padding-top: 1%;
+}
+
+
+.flecha_barra3 {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left:  20px solid  cadetblue;
+    display: inline-block;
+    position: absolute;
+    margin-left:-4px;
+    padding: 0;
+}
+
+.caja_barra_deactive{
+    height: 40px;
+	max-width: 32%;
+    width: 25%;
+	background-color: gray;
+    display: inline-block;
+    margin-left:-4px;
+    padding: 0;
+    text-align: center;
+    padding-top: 1%;
+}
+
+
+.flecha_barra_deactive {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left:  20px solid  gray;
+    display: inline-block;
+    position: absolute;
+    margin-left:-4px;
+    padding: 0;
 }

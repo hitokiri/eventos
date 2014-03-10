@@ -69,11 +69,7 @@ class Usuarios{
 */
     protected $imagen;
 
-/**
- * @ORM\ManyToOne(targetEntity="Distros", inversedBy="usuarios")
- * @ORM\JoinColumn(name="distro_id", referencedColumnName="id")
- */
-    protected $distros;
+
 
 /**
 * @ORM\Column(type="integer")
@@ -81,7 +77,7 @@ class Usuarios{
 
     protected $distro_cantidad;
 
-
+    
 
     /**
      * Get id
@@ -321,28 +317,5 @@ class Usuarios{
     public function getDistroCantidad()
     {
         return $this->distro_cantidad;
-    }
-
-    /**
-     * Set distros
-     *
-     * @param \Acme\EventosBundle\Entity\Distros $distros
-     * @return Usuarios
-     */
-    public function setDistros(\Acme\EventosBundle\Entity\Distros $distros = null)
-    {
-        $this->distros = $distros;
-
-        return $this;
-    }
-
-    /**
-     * Get distros
-     *
-     * @return \Acme\EventosBundle\Entity\Distros 
-     */
-    public function getDistros()
-    {
-        return $this->distros;
     }
 }

@@ -1,0 +1,30 @@
+
+<div class="row principal-barra">
+	{% if vista =='crear' %}
+		<div class="caja_barra_deactive">Listar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra2"> Crear</div>
+	    <div class="flecha_barra2"></div>
+	    <div class="caja_barra_deactive">Finalizar</div>
+	    <div class="flecha_barra_deactive"></div>
+	{% endif %}
+	{% if vista =='modificar_opcion' %}
+		<div class="caja_barra1">Listar</div>
+	    <div class="flecha_barra1"></div>
+	    <div class="caja_barra_deactive"> Modificar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra_deactive">Finalizar</div>
+	    <div class="flecha_barra_deactive"></div>
+	{% endif %}
+	{% if vista =='modificar' %}
+		<div class="caja_barra_deactive">Listar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra2"> Modificar</div>
+	    <div class="flecha_barra2"></div>
+	    <div class="caja_barra_deactive">Finalizar</div>
+	    <div class="flecha_barra_deactive"></div>
+	{% endif %}
+
+
+</div>
+

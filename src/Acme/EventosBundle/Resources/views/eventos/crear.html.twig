@@ -2,6 +2,9 @@
 {% block title %}
 	Crear Usuario
 {% endblock %}
+{% block barra_progreso_inscripcion %}
+{% include 'EventosBundle::barras.html.twig'  %}
+{% endblock %}
 {% block datos_asistente %}
 
 
@@ -44,10 +47,7 @@
   			{{ form_label(form.imagen, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
   			<div class="col-xs-9">{{ form_errors(form.imagen) }}{{ form_widget(form.imagen) }}</div>
   		</div>
-  		<div class="form-group">
-  			{{ form_label(form.distros, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
-  			<div class="col-xs-9">{{ form_errors(form.distros) }}{{ form_widget(form.distros, { 'attr': {'class': 'form-control', 'placeholder': 'lol'}}) }}</div>
-  		</div>
+
   		<div class="form-group">
   			{{ form_label(form.distro_cantidad, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
   			<div class="col-xs-9">{{ form_errors(form.distro_cantidad) }}{{ form_widget(form.distro_cantidad, { 'attr': {'class': 'form-control'}}) }}</div>

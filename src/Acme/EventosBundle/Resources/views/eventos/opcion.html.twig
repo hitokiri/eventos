@@ -1,4 +1,10 @@
 {% extends 'EventosBundle::mibasetabla.html.twig' %}
+{% block title %}
+    Accion Listar {{opcion}}
+{% endblock %}
+{% block barra_progreso_inscripcion %}
+{% include 'EventosBundle::barras.html.twig'  %}
+{% endblock %}
 {% block tabla_usuarios %}
 	{% if opcion == 'modificar' %}
 		{% for item in usuarios %}

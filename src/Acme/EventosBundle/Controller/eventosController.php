@@ -33,8 +33,7 @@ class eventosController extends Controller{
 
 	        return $this->redirect($this->generateUrl('usuario_crear'));
 	    }
-	    $params = array('mensaje' => 'Crear Usuario',
-						'fecha' => date('d-m-yy'),
+	    $params = array('vista' => 'crear',
 						'form' => $form->createView(),
 						);
 	    return $this->render('EventosBundle:eventos:crear.html.twig',$params);
@@ -60,6 +59,7 @@ class eventosController extends Controller{
       	$consulta = $repositorio->findAll();
     	$params = array('opcion' => $opcion,
     					'usuarios' => $consulta,
+              'vista' => 'modificar_opcion',
     					);
     	return $this -> render('EventosBundle:eventos:opcion.html.twig',$params);
     }
@@ -72,6 +72,7 @@ class eventosController extends Controller{
 
     public function opcion_UpdateAction($id){
     	$params = array('opcion' => $id,
+                      'vista' => 'modificar',
     					);
     	return $this -> render('EventosBundle:eventos:opcion_update.html.twig',$params);
     }

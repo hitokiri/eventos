@@ -24,11 +24,7 @@ class UsuarioForm extends AbstractType{
 		$builder -> add('comunidad');
 		$builder -> add('direccion');
 		$builder -> add('imagen', 'file');
-		$builder -> add('distros', 'entity', array(
-			'class' => 'EventosBundle:Distros',
-    		'property' => 'nombre',
-    		'empty_value' => 'Seleccione una Distro',
-			));
+
 		$builder -> add('distro_cantidad');
 	}
 

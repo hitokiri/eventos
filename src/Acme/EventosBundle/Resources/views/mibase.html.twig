@@ -8,9 +8,6 @@
 <script src="{{ asset('bundles/eventos/js/mio.js') }} "></script>
 {% endblock %}
 {% block body %}
-
-
-
 <nav class="navbar navbar-default navbar-inverse" role="navigation">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
@@ -46,12 +43,8 @@
 		</ul>
 	</div><!-- /.navbar-collapse -->
 </nav>
-
-
-
-
 <div id="contenido">
-
+{% block barra_progreso_inscripcion %}{% endblock %}
 {% block contenido %}
 
 {% endblock %}

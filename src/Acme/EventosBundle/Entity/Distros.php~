@@ -3,7 +3,7 @@
 namespace Acme\EventosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
 * @ORM\Entity
 * @ORM\Table(name="distros")
@@ -27,13 +27,15 @@ class Distros{
 * @ORM\Column(type="integer")
 */
 
-    protected $distro_cantidad;
+    protected $distrocantidad;
 
 /**
-* @ORM\Column(type="string", length=100)
+* @ORM\Column(type="string", length=100, nullable=true)
 */
- 	protected $logo;
+ 	protected $logo;   
 
 
+   
 
+   
 }

@@ -3,7 +3,7 @@
 namespace Acme\EventosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
 * @ORM\Entity
 * @ORM\Table(name="distros")
@@ -27,20 +27,22 @@ class Distros{
 * @ORM\Column(type="integer")
 */
 
-    protected $distro_cantidad;
+    protected $distrocantidad;
 
 /**
 * @ORM\Column(type="string", length=100, nullable=true)
 */
- 	protected $logo;
+ 	protected $logo;   
 
 
+   
 
+   
 
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -63,7 +65,7 @@ class Distros{
     /**
      * Get nombre
      *
-     * @return string
+     * @return string 
      */
     public function getNombre()
     {
@@ -71,26 +73,26 @@ class Distros{
     }
 
     /**
-     * Set distro_cantidad
+     * Set distrocantidad
      *
-     * @param integer $distroCantidad
+     * @param integer $distrocantidad
      * @return Distros
      */
-    public function setDistroCantidad($distroCantidad)
+    public function setDistrocantidad($distrocantidad)
     {
-        $this->distro_cantidad = $distroCantidad;
+        $this->distrocantidad = $distrocantidad;
 
         return $this;
     }
 
     /**
-     * Get distro_cantidad
+     * Get distrocantidad
      *
-     * @return integer
+     * @return integer 
      */
-    public function getDistroCantidad()
+    public function getDistrocantidad()
     {
-        return $this->distro_cantidad;
+        return $this->distrocantidad;
     }
 
     /**
@@ -109,17 +111,10 @@ class Distros{
     /**
      * Get logo
      *
-     * @return string
+     * @return string 
      */
     public function getLogo()
     {
         return $this->logo;
     }
-
-    public function __toString()
-    {
-        return sprintf('%s ', $this->nombre);
-    }
-
-
 }
