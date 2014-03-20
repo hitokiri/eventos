@@ -2,8 +2,11 @@ eventos_homepage:
     pattern:  /
     defaults: { _controller: EventosBundle:eventos:index }
 usuario_crear:
-    pattern:  /usuario/crear
+    pattern:  /usuario/opciones/crear
     defaults: { _controller: EventosBundle:eventos:crear }
+usuario_crear_pedido:
+    pattern:  /usuario/opciones/crear/pedido/{id}
+    defaults: { _controller: EventosBundle:eventos:crear_pedido }
 usuario_mostrartodo:
     pattern:  /usuario/mostrar_todo
     defaults: { _controller: EventosBundle:eventos:mostrarTodo }
@@ -22,3 +25,6 @@ distros_mostrar:
 distros_crear:
     pattern:  /distros/crear
     defaults: { _controller: EventosBundle:eventos:distros_crear }
+finalizar:
+    pattern:  /finalizar/{opcion}/{id}
+    defaults: { _controller: EventosBundle:eventos:finalizar }

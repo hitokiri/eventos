@@ -5,11 +5,10 @@
 {% block barra_progreso_inscripcion %}
 {% include 'EventosBundle::barras.html.twig'  %}
 {% endblock %}
+{% block accion %}
+  {{ path('usuario_crear') }}
+{% endblock %}
 {% block datos_asistente %}
-
-
-<form action="{{ path('usuario_crear') }}" method="post" {{ form_enctype(form) }}>
-
   <div class="form-horizontal">
   		<div class="form-group">
   			{{ form_label(form.nombre, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
@@ -43,19 +42,17 @@
   			{{ form_label(form.direccion, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
   			<div class="col-xs-9">{{ form_errors(form.direccion) }}{{ form_widget(form.direccion, { 'attr': {'class': 'form-control'}}) }}</div>
   		</div>
-		<div class="form-group">
-  			{{ form_label(form.imagen, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
-  			<div class="col-xs-9">{{ form_errors(form.imagen) }}{{ form_widget(form.imagen) }}</div>
-  		</div>
-
-  		<div class="form-group">
-  			{{ form_label(form.distro_cantidad, label|default(null), { 'label_attr': { 'class': 'col-xs-3 control-label' }}) }}
-  			<div class="col-xs-9">{{ form_errors(form.distro_cantidad) }}{{ form_widget(form.distro_cantidad, { 'attr': {'class': 'form-control'}}) }}</div>
-  		</div>
   	</div>
+	<br>
+	<br>
 
-		<input type="submit" value="Enviar Consulta" class="btn btn-defaul">
-	<br>
-	<br>
-</form>
+{% endblock %}
+{% block foto_asistente_campo %}
+<div class="row">
+  <div class="form-group">
+
+  <div class="col-xs-9">{{ form_errors(form.imagen) }}{{ form_widget(form.imagen) }}</div>
+  </div>
+</div>
+
 {% endblock %}

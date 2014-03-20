@@ -59,7 +59,7 @@ class eventosController extends Controller{
       	$consulta = $repositorio->findAll();
     	$params = array('opcion' => $opcion,
     					'usuarios' => $consulta,
-              'vista' => 'modificar_opcion',
+              'vista' => $opcion,
     					);
     	return $this -> render('EventosBundle:eventos:opcion.html.twig',$params);
     }
@@ -72,28 +72,28 @@ class eventosController extends Controller{
 
     public function opcion_UpdateAction($id){
     	$params = array('opcion' => $id,
-                      'vista' => 'modificar',
+                      'vista' => 'modificar1',
     					);
     	return $this -> render('EventosBundle:eventos:opcion_update.html.twig',$params);
     }
 
      public function distros_crearAction(Request $request){
-    	$usuarios = new Distros();
-      	$form = $this->createForm(new DistrosForm(), $usuarios);
-      	$form->handleRequest($request);
+      	$usuarios = new Distros();
+        	$form = $this->createForm(new DistrosForm(), $usuarios);
+        	$form->handleRequest($request);
 
-	    if ($form->isValid()) {
-	    	$dir = '/var/www/eventos/web/bundles/eventos/images';
-	    	$form['logo']->getData()->move($dir);
-	        $em = $this->getDoctrine()->getManager();
-		    $em->persist($usuarios);
-		    $em->flush();
+  	    if ($form->isValid()) {
+  	    	$dir = '/var/www/eventos/web/bundles/eventos/images';
+  	    	$form['logo']->getData()->move($dir);
+  	        $em = $this->getDoctrine()->getManager();
+  		    $em->persist($usuarios);
+  		    $em->flush();
 
-	    return $this->redirect($this->generateUrl('distros_crear'));
-   		}
-	    $params = array('form' => $form->createView(),
-						);
-	return $this->render('EventosBundle:eventos:Distros.html.twig',$params);
+  	    return $this->redirect($this->generateUrl('distros_crear'));
+     		}
+  	    $params = array('form' => $form->createView(),
+  						);
+	     return $this->render('EventosBundle:eventos:Distros.html.twig',$params);
 	}
 
 	public function distros_mostrarAction(){
@@ -105,5 +105,30 @@ class eventosController extends Controller{
 	    $params = array('todos' => $consulta,
 						);
 	    return $this->render('EventosBundle:eventos:DistrosmostrarTodo.html.twig',$params);
+    }
+
+  public function finalizarAction($opcion, $id){
+
+      $barra = array('<div class="caja_barra_deactive">Listar</div>',
+      '<div class="flecha_barra_deactive"></div>',
+      '<div class="caja_barra2"> Modificar</div>',
+      '<div class="flecha_barra2"></div>',
+      '<div class="caja_barra_deactive">Finalizar</div>',
+      '<div class="flecha_barra_deactive"></div>',);
+
+      $params = array('opcion' => $opcion,
+                      'id' => $id,
+                      'vista' => 'finalizar',
+                      'barra' => $barra,
+              );
+      return $this -> render('EventosBundle:eventos:finalizar.html.twig',$params);
+    }
+
+  public function crear_pedidoAction($id){
+
+      $params = array('id' => $id,
+                      'vista' => 'finalizar',
+              );
+      return $this -> render('EventosBundle:eventos:crear_pedido.html.twig',$params);
     }
 }

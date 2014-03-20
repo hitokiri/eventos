@@ -24,8 +24,6 @@ class UsuarioForm extends AbstractType{
 		$builder -> add('comunidad');
 		$builder -> add('direccion');
 		$builder -> add('imagen', 'file');
-
-		$builder -> add('distro_cantidad');
 	}
 
 	public function getName(){

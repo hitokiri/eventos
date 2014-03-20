@@ -1,10 +1,10 @@
 
 <div class="row principal-barra">
 	{% if vista =='crear' %}
-		<div class="caja_barra_deactive">Listar</div>
+	    <div class="caja_barra1"> Crear</div>
+	    <div class="flecha_barra1"></div>
+	    <div class="caja_barra_deactive">Pedido</div>
 	    <div class="flecha_barra_deactive"></div>
-	    <div class="caja_barra2"> Crear</div>
-	    <div class="flecha_barra2"></div>
 	    <div class="caja_barra_deactive">Finalizar</div>
 	    <div class="flecha_barra_deactive"></div>
 	{% endif %}
@@ -17,6 +17,14 @@
 	    <div class="flecha_barra_deactive"></div>
 	{% endif %}
 	{% if vista =='modificar' %}
+		<div class="caja_barra1">Listar</div>
+	    <div class="flecha_barra1"></div>
+	    <div class="caja_barra_deactive"> Modificar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra_deactive">Finalizar</div>
+	    <div class="flecha_barra_deactive"></div>
+	{% endif %}
+	{% if vista =='modificar1' %}
 		<div class="caja_barra_deactive">Listar</div>
 	    <div class="flecha_barra_deactive"></div>
 	    <div class="caja_barra2"> Modificar</div>
@@ -24,7 +32,34 @@
 	    <div class="caja_barra_deactive">Finalizar</div>
 	    <div class="flecha_barra_deactive"></div>
 	{% endif %}
+	{% if vista =='eliminar' %}
+		<div class="caja_barra1">Listar</div>
+	    <div class="flecha_barra1"></div>
+	    <div class="caja_barra_deactive"> Eliminar</div>
+	    <div class="flecha_barra_deactive"></div>
+	{% endif %}
+	{% if vista =='finalizar' and opcion == 'modificar' %}
+		<div class="caja_barra_deactive">Listar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra_deactive"> Modificar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra3">Finalizar</div>
+	    <div class="flecha_barra3"></div>
+	{% endif %}
+	{% if vista =='finalizar' and opcion == 'eliminar' %}
+		<div class="caja_barra_deactive">Listar</div>
+	    <div class="flecha_barra_deactive"></div>
+	    <div class="caja_barra2"> Eliminar</div>
+	    <div class="flecha_barra2"></div>
 
+	{% endif %}
+{#
+{% autoescape false %}
+    {% for item in barra %}
+	    {{item}}
+	{% endfor %}
+{% endautoescape %}
 
+#}
 </div>
 

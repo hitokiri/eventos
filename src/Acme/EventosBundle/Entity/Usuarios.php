@@ -71,18 +71,10 @@ class Usuarios{
 
 
 
-/**
-* @ORM\Column(type="integer")
-*/
-
-    protected $distro_cantidad;
-
-    
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -105,7 +97,7 @@ class Usuarios{
     /**
      * Get nombre
      *
-     * @return string 
+     * @return string
      */
     public function getNombre()
     {
@@ -128,7 +120,7 @@ class Usuarios{
     /**
      * Get apellidos
      *
-     * @return string 
+     * @return string
      */
     public function getApellidos()
     {
@@ -151,7 +143,7 @@ class Usuarios{
     /**
      * Get sexo
      *
-     * @return string 
+     * @return string
      */
     public function getSexo()
     {
@@ -174,7 +166,7 @@ class Usuarios{
     /**
      * Get mail
      *
-     * @return string 
+     * @return string
      */
     public function getMail()
     {
@@ -197,7 +189,7 @@ class Usuarios{
     /**
      * Get telefono
      *
-     * @return string 
+     * @return string
      */
     public function getTelefono()
     {
@@ -220,7 +212,7 @@ class Usuarios{
     /**
      * Get dui
      *
-     * @return integer 
+     * @return integer
      */
     public function getDui()
     {
@@ -243,7 +235,7 @@ class Usuarios{
     /**
      * Get comunidad
      *
-     * @return string 
+     * @return string
      */
     public function getComunidad()
     {
@@ -266,7 +258,7 @@ class Usuarios{
     /**
      * Get direccion
      *
-     * @return string 
+     * @return string
      */
     public function getDireccion()
     {
@@ -289,33 +281,11 @@ class Usuarios{
     /**
      * Get imagen
      *
-     * @return string 
+     * @return string
      */
     public function getImagen()
     {
         return $this->imagen;
     }
 
-    /**
-     * Set distro_cantidad
-     *
-     * @param integer $distroCantidad
-     * @return Usuarios
-     */
-    public function setDistroCantidad($distroCantidad)
-    {
-        $this->distro_cantidad = $distroCantidad;
-
-        return $this;
-    }
-
-    /**
-     * Get distro_cantidad
-     *
-     * @return integer 
-     */
-    public function getDistroCantidad()
-    {
-        return $this->distro_cantidad;
-    }
 }

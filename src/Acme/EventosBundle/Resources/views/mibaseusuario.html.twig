@@ -1,34 +1,38 @@
 {% extends 'EventosBundle::mibase.html.twig' %}
 {% block contenido %}
-
+	<form action="{% block accion %}{% endblock %}" method="post" {{ form_enctype(form) }}>
 	<div class="row">
 		<form action="{% block accion_usuario %}{% endblock %} " method="post" {% block form_enctype %}{% endblock %}>
 			<div class="caja_usuarios col-xs-8 col-xs-offset-2 navbar-inverse">
 			<div class="row">
-			<div class="col-xs-6 fichausuario">
-				<h4>Datos Asistente</h4>
-				{% block datos_asistente %}
-					<br>nombre:
-					<br>apellidos:
-					<br>comunidad:
-					<br>distros:
-				{% endblock %}
-			</div>
-			<div class="col-xs-5 fichausuario ">
-				{% block foto_asistente %}
-				    <img src="{{ asset('bundles/eventos/images/')}}avatar_generico.gif" alt="" class="img-circle">
-				{% endblock %}
-				{% block foto_asistente_campo %}
+				<div class="col-xs-6 fichausuario">
 
-				{% endblock %}
-			</div>
+					<h4>Datos Asistente</h4>
+					{% block datos_asistente %}
+						<br>nombre:
+						<br>apellidos:
+						<br>comunidad:
+						<br>distros:
+					{% endblock %}
+				</div>
+				<div class="col-xs-5 fichausuario ">
+				<div class="row">
+					{% block foto_asistente %}
+					    <img src="{{ asset('bundles/eventos/images/')}}avatar_generico.gif" alt="" class="img-circle">
+					{% endblock %}
+				</div>
 
-			</div>
+					{% block foto_asistente_campo %}
+						lol
+					{% endblock %}
+					{% block datos_distros %}
 
+					{% endblock %}
+				</div>
 			</div>
-		</form>
+		</div>
 	</div>
-
+</form>
 
 
 {% endblock %}
