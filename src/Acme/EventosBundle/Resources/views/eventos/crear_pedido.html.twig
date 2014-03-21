@@ -1,1 +1,18 @@
 {% extends 'EventosBundle::mibase.html.twig' %}
+
+{% block contenido %}
+    {% for item in consulta %}
+    	{{item.nombre}} <input type="text" name="{{item.nombre}}" id="campo_nombre{{loop.index}}" class="texto">
+	{% endfor %}
+	<input type="text" name="salida" id="salida">
+{% endblock %}
+{% block javascripts %}
+	<script>
+	$(".texto").keyup(function(){
+		var $texto_get = $('#campo_nombre1').val() + ',' + $('#campo_nombre2').val() ;
+		$('#salida').val($texto_get);
+
+	});
+
+	</script>
+{% endblock %}

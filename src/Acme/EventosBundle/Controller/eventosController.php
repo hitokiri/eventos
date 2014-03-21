@@ -5,9 +5,11 @@ namespace Acme\EventosBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Acme\EventosBundle\Entity\Usuarios;
 use Acme\EventosBundle\Entity\Distros;
+use Acme\EventosBundle\Entity\PedidosDistros;
 use Symfony\Component\HttpFoundation\Request;
 use Acme\EventosBundle\Forms\UsuarioForm;
 use Acme\EventosBundle\Forms\DistrosForm;
+use Acme\EventosBundle\Forms\PedidosDistrosForm;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class eventosController extends Controller{
@@ -125,9 +127,14 @@ class eventosController extends Controller{
     }
 
   public function crear_pedidoAction($id){
+    $repositorio = $this -> getDoctrine()
+              ->getRepository('EventosBundle:Distros');
+
+        $consulta = $repositorio->findAll();
 
       $params = array('id' => $id,
                       'vista' => 'finalizar',
+                      'consulta' => $consulta,
               );
       return $this -> render('EventosBundle:eventos:crear_pedido.html.twig',$params);
     }
